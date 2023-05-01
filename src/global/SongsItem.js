@@ -21,11 +21,6 @@ import { useNavigation } from "@react-navigation/native";
 // import colors from "../constants/colors";
 
 const SongsItem = ({ item, imageStyle, onPress }) => {
-  // console.log(
-  //   "here is my url in item ===============================================>",
-  //   item
-  // );
-
   const navigation = useNavigation();
 
   function formatSongDuration(durationInSeconds) {

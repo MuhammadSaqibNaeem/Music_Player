@@ -1,3 +1,5 @@
+/** @format */
+
 import React, { useState } from "react";
 import {
   View,
@@ -19,7 +21,7 @@ import colors from "../../constants/colors";
 import SongsItem from "../SongsItem";
 import { useNavigation } from "@react-navigation/native";
 
-const Songs = ({ artist, recently, mostPlayed, imageStyle, text,data }) => {
+const Songs = ({ artist, recently, mostPlayed, imageStyle, text, data }) => {
   const data2 = [
     {
       id: "1",
@@ -58,7 +60,7 @@ const Songs = ({ artist, recently, mostPlayed, imageStyle, text,data }) => {
     },
   ];
 
-  const navigation = useNavigation()
+  const navigation = useNavigation();
 
   // console.log('data =============> ',data)
 
@@ -79,9 +81,8 @@ const Songs = ({ artist, recently, mostPlayed, imageStyle, text,data }) => {
         </TouchableOpacity>
       </View>
       <View>
-        {data.map((item) => {
-          
-          return <SongsItem  imageStyle={imageStyle} item={item} />;
+        {data?.map((item) => {
+          return <SongsItem imageStyle={imageStyle} item={item} />;
         })}
       </View>
     </View>
