@@ -1,4 +1,6 @@
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+/** @format */
+
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import {
   Text,
   TouchableOpacity,
@@ -13,33 +15,33 @@ import {
 import AntDesign from "react-native-vector-icons/AntDesign";
 import Ionicons from "react-native-vector-icons/Ionicons";
 
-import BottomTabNavigator from '../../bottomTab/BottomTabNavigation';
-import AlbumSongsList from '../../../screens/albumsongs/AlbumSongsList'
-import AudioPlayer from '../../../screens/player/TestingPlayer';
-
+import BottomTabNavigator from "../../bottomTab/BottomTabNavigation";
+import AlbumSongsList from "../../../screens/albumsongs/AlbumSongsList";
+import AudioPlayer from "../../../screens/player/TestingPlayer";
+import LocalSongsPlayer from "../../../screens/player/LocalSongsPlayer";
 
 const Stack = createNativeStackNavigator();
 
 const HomeStack = () => {
   return (
     <Stack.Navigator initialRouteName="BottomTabNavigator">
-       <Stack.Screen 
-      name="BottomTabNavigator" 
-      options={{headerShown:false}}
-      component={BottomTabNavigator} 
+      <Stack.Screen
+        name="BottomTabNavigator"
+        options={{ headerShown: false }}
+        component={BottomTabNavigator}
       />
       <Stack.Screen
         name="AlbumSongsList"
         options={{
-          title:'',
-          headerStyle:{
-            backgroundColor:'black',
+          title: "",
+          headerStyle: {
+            backgroundColor: "black",
           },
           headerShown: true,
-          headerTitleAlign: 'center',
-          headerBackTitle: 'Back',
+          headerTitleAlign: "center",
+          headerBackTitle: "Back",
           headerShadowVisible: false,
-          headerTintColor: 'white',
+          headerTintColor: "white",
           headerRight: () => (
             <View style={{ flexDirection: "row" }}>
               <TouchableOpacity
@@ -59,7 +61,11 @@ const HomeStack = () => {
                 }}
                 onPress={() => console.log("I am Zia")}
               >
-                <Ionicons name="ellipsis-horizontal-circle-outline" size={25} color={"white"} />
+                <Ionicons
+                  name="ellipsis-horizontal-circle-outline"
+                  size={25}
+                  color={"white"}
+                />
               </TouchableOpacity>
             </View>
           ),
@@ -69,15 +75,15 @@ const HomeStack = () => {
       <Stack.Screen
         name="AudioPlayer"
         options={{
-          title:'',
-          headerStyle:{
-            backgroundColor:'black',
+          title: "",
+          headerStyle: {
+            backgroundColor: "black",
           },
           headerShown: true,
-          headerTitleAlign: 'center',
-          headerBackTitle: 'Back',
+          headerTitleAlign: "center",
+          headerBackTitle: "Back",
           headerShadowVisible: false,
-          headerTintColor: 'white',
+          headerTintColor: "white",
           headerRight: () => (
             <View style={{ flexDirection: "row" }}>
               {/* <TouchableOpacity
@@ -97,50 +103,48 @@ const HomeStack = () => {
                 }}
                 onPress={() => console.log("I am Zia")}
               >
-                <Ionicons name="ellipsis-horizontal-circle-outline" size={25} color={"white"} />
+                <Ionicons
+                  name="ellipsis-horizontal-circle-outline"
+                  size={25}
+                  color={"white"}
+                />
               </TouchableOpacity>
             </View>
           ),
         }}
         component={AudioPlayer}
       />
-
-      {/* <Stack.Screen
-        name="Subjects"
-        options={{
-          headerShown: true,
-          headerTitleAlign: 'center',
-          headerBackTitle: 'Back',
-          headerShadowVisible: false,
-        }}
-        component={Subjects}
-      />
       <Stack.Screen
-        name="MainCourse"
+        name="LocalSongsPlayer"
         options={{
+          title: "",
+          headerStyle: {
+            backgroundColor: "black",
+          },
           headerShown: true,
-          headerTitleAlign: 'center',
-          headerBackTitle: 'Back',
+          headerTitleAlign: "center",
+          headerBackTitle: "Back",
           headerShadowVisible: false,
+          headerTintColor: "white",
+          headerRight: () => (
+            <View style={{ flexDirection: "row" }}>
+              <TouchableOpacity
+                style={{
+                  padding: 7,
+                  borderRadius: 10,
+                }}
+              >
+                <Ionicons
+                  name="ellipsis-horizontal-circle-outline"
+                  size={25}
+                  color={"white"}
+                />
+              </TouchableOpacity>
+            </View>
+          ),
         }}
-        component={MainCourse}
+        component={LocalSongsPlayer}
       />
-
-      <Stack.Screen
-        name="Course"
-        options={{
-          headerShown: true,
-          headerTitleAlign: 'center',
-          headerBackTitle: 'Back',
-          headerShadowVisible: false,
-        }}
-        component={Course}
-      /> */}
-
-     
-
-      
-     
     </Stack.Navigator>
   );
 };

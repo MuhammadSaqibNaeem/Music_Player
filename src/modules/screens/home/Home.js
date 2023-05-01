@@ -1,3 +1,5 @@
+/** @format */
+
 import React, { useState, useEffect } from "react";
 import {
   View,
@@ -21,9 +23,6 @@ import axios from "axios";
 const data1 = [
   { id: "1", name: "Suggested" },
   { id: "2", name: "Songs" },
-  { id: "3", name: "Artist" },
-  { id: "4", name: "Album" },
-  { id: "5", name: "Favorites" },
 ];
 
 //  Api key
@@ -82,7 +81,7 @@ const Home = () => {
       .then((response) => {
         // console.log('response=======================>Response <======================= > ',response);
         // console.log('response=======================>Tracks data <======================= > ',response.tracks.data[0]);
-        setSongs(response.tracks.data)
+        setSongs(response.tracks.data);
       })
       .catch((err) => console.error(err));
   }, []);
